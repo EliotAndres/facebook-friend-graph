@@ -4,21 +4,9 @@ Plotting your friend network using Plotly, NetworkX and python-louvain
 ## Result
 <img src="./result.png" alt="Koa middleware framework for nodejs"/>
 
-## Installation
+## Installation and usage
 
-    pip install -r requirements.txt
-
-Install chrome driver [here](https://chromedriver.storage.googleapis.com/index.html?path=2.38/)
-
-## 1 - Scrapping the mutual friends
-
-    python facebookFOF.py
-
-The script will scrappe your mutual friends. It'll periodically save the graph.
-So if it crashes just restart it and it'll start where it stopped.
-
-## 2 - Plotting the graph
-See the jupyter notebook
+All the details are available [in this blog post](https://ndres.me/post/friend-graph-tutorial/)
 
 ## Acknowledgement
 
