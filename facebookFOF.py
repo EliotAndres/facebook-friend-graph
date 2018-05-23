@@ -26,20 +26,28 @@ elem.send_keys(password)
 elem.send_keys(Keys.RETURN)
 time.sleep(5)
 
+SCROLL_PAUSE_TIME = 2
+
 
 def get_fb_page(url):
     time.sleep(2)
     driver.get(url)
-    pos = -1
-    pos_prev = -1
-    scroll_height = 0
-    while pos != scroll_height:
-        driver.execute_script("window.scrollBy(0,5000)");
-        scroll_height = driver.execute_script("return document.body.scroll_height")
-        pos = pos_prev
-        pos_prev = scroll_height
-        time.sleep(2)
 
+    # Get scroll height
+    last_height = driver.execute_script("return document.body.scrollHeight")
+
+    while True:
+        # Scroll down to bottom
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+        # Wait to load page
+        time.sleep(SCROLL_PAUSE_TIME)
+
+        # Calculate new scroll height and compare with last scroll height
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if new_height == last_height:
+            break
+        last_height = new_height
     html_source = driver.page_source
     return html_source
 
