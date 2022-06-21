@@ -1,7 +1,7 @@
 python-louvain==0.10
 networkx==2.1
 colorlover==0.2.1
-numpy==1.14.0
+numpy==1.22.0
 plotly==2.5.1
 tqdm==4.23.0
 selenium==3.11.0
